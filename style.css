@@ -1,0 +1,459 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f5f5f5;
+    color: #10233f;
+    line-height: 1.6;
+}
+
+header {
+    background: #0a4f8b;
+}
+
+header nav {
+    width: min(1200px, 95vw);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 18px 20px;
+    justify-content: space-between;   
+    gap: 30px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    
+}
+
+.page-hero {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+    color: #fff;
+}
+
+.page-hero h1 {
+    position: relative;
+    z-index: 1;
+    font-size: clamp(2.5rem, 5vw, 4.2rem);
+    max-width: 900px;
+    margin: 0;
+}
+
+.page-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(16, 35, 63, 0.45);
+}
+
+main {
+    width: min(1200px, 95vw);
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.08);
+    padding: 32px;
+    margin-bottom: 32px;
+}
+
+.card h2 {
+    color: #0d4f8b;
+    margin-bottom: 16px;
+    font-size: 2rem;
+}
+
+.card p,
+.card span,
+.card ol,
+.card ul {
+    color: #46525d;
+    font-size: 1rem;
+    line-height: 1.8;
+}
+
+.card ol {
+    margin: 18px 0 0 20px;
+}
+
+.images-dortoir img {
+    width: 100%;
+    border-radius: 16px;
+    display: block;
+    margin-top: 20px;
+    box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
+}
+
+/* ===== CARD SPLIT (Dortoirs / Sports) ===== */
+.card-split {
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 26px;
+    align-items: center;
+}
+
+.card-media {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    min-height: 260px;
+    background: linear-gradient(180deg, rgba(13,79,139,0.10), rgba(13,79,139,0.02));
+}
+
+.card-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transform: scale(1.02);
+}
+
+.media-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: rgba(10, 74, 134, 0.92);
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.2px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+    z-index: 2;
+}
+
+.card-content {
+    padding: 4px 0;
+}
+
+.card-content .lead {
+    color: #2c3a44;
+    font-size: 1.05rem;
+    line-height: 1.75;
+    margin-bottom: 18px;
+}
+
+.list-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 14px;
+    margin: 18px 0 16px;
+}
+
+.list-item {
+    background: linear-gradient(180deg, rgba(13,79,139,0.06), rgba(13,79,139,0.02));
+    border: 1px solid rgba(13,79,139,0.14);
+    border-radius: 14px;
+    padding: 14px 14px;
+}
+
+.list-item h3 {
+    margin: 0 0 6px;
+    font-size: 0.98rem;
+    color: #0d4f8b;
+}
+
+.list-item p {
+    margin: 0;
+    color: #5a6772;
+    font-size: 0.93rem;
+    line-height: 1.6;
+}
+
+.list-slim {
+    margin: 0;
+    padding-left: 18px;
+    color: #46525d;
+}
+
+.pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0 14px;
+}
+
+.pill {
+    background: rgba(13,79,139,0.10);
+    border: 1px solid rgba(13,79,139,0.18);
+    color: #0d4f8b;
+    font-weight: 800;
+    padding: 9px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+}
+
+.muted {
+    color: #657386;
+    margin: 14px 0 14px;
+}
+
+.checklist {
+    margin: 0;
+    padding-left: 18px;
+    color: #46525d;
+}
+
+.checklist li {
+    margin: 8px 0;
+}
+
+@media (max-width: 840px) {
+    .card-split {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .card-media {
+        min-height: 220px;
+    }
+
+    .media-badge {
+        top: 12px;
+        left: 12px;
+        font-size: 12px;
+        padding: 9px 10px;
+    }
+
+    .card-content {
+        padding: 0;
+    }
+
+    .card-content .lead {
+        font-size: 1rem;
+        margin-bottom: 14px;
+    }
+
+    .list-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin: 14px 0 14px;
+    }
+
+    .list-item {
+        padding: 12px;
+    }
+
+    .list-item h3 {
+        font-size: 0.95rem;
+    }
+
+    .pills {
+        margin: 12px 0 10px;
+        gap: 8px;
+    }
+
+    .pill {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+
+    .muted {
+        margin: 10px 0 10px;
+    }
+
+    .checklist {
+        padding-left: 16px;
+    }
+
+    .checklist li {
+        margin: 6px 0;
+    }
+}
+
+
+
+footer {
+    background: #0a4f8b;
+    color: #fff;
+    text-align: center;
+    padding: 22px 18px;
+    font-size: 0.95rem;
+}
+
+/* ===== FAQ (UNILUK) ===== */
+.faq-section {
+    background: #fff;
+    padding: 60px 0;
+}
+
+.faq-title {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.faq {
+    margin-top: 18px;
+    display: grid;
+    gap: 14px;
+}
+
+.faq-item {
+    border: 1px solid rgba(13,79,139,0.14);
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.faq-question {
+    cursor: pointer;
+    padding: 16px 18px;
+    font-weight: 900;
+    color: #0d4f8b;
+    list-style: none;
+    outline: none;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-answer {
+    padding: 0 18px 16px;
+    color: #666;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.faq-item[open] {
+    box-shadow: 0 12px 32px rgba(10, 74, 134, 0.08);
+}
+
+@media (max-width: 900px) {
+    .faq-section {
+        padding: 40px 0;
+    }
+
+    .faq-title {
+        font-size: 28px;
+    }
+}
+
+
+@media (max-width: 840px) {
+    .page-hero {
+        min-height: 340px;
+        padding: 40px 16px;
+    }
+
+    main {
+        padding: 24px 16px;
+    }
+
+    .card {
+        padding: 24px;
+    }
+
+    .campus-gallery {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== GALERIE CAMPUS ===== */
+
+.campus-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.campus-card {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+    transition: 0.3s ease;
+}
+
+.campus-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+.campus-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.campus-card:hover img {
+    transform: scale(1.08);
+}
+
+.campus-info {
+    padding: 20px;
+}
+
+.campus-info h3 {
+    color: #10233f;
+    margin-bottom: 10px;
+}
+
+.campus-info p {
+    color: #657386;
+    font-size: 0.95rem;
+}
+
+/* ===== Ajustements DESKTOP (réduire la taille des cartes) ===== */
+@media (min-width: 841px) {
+    .card {
+        padding: 26px;
+        margin-bottom: 24px;
+        border-radius: 18px;
+    }
+
+    .card h2 {
+        font-size: 1.7rem;
+        margin-bottom: 12px;
+    }
+
+    .card-split {
+        gap: 20px;
+    }
+
+    .card-media {
+        min-height: 220px;
+        border-radius: 14px;
+    }
+
+    .list-item {
+        padding: 12px 12px;
+        border-radius: 12px;
+    }
+
+    .campus-gallery {
+        gap: 18px;
+        margin-top: 22px;
+    }
+
+    .campus-card {
+        border-radius: 13px;
+    }
+
+    .campus-card img {
+        height: 200px;
+    }
+
+    .campus-info {
+        padding: 16px;
+    }
+}
+

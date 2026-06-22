@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.uniluk.org" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="canonical" href="https://www.uniluk.org" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      background: #f5f5f5;
+      color: #222;
+    }
+
+    .topbar {
+      background: #0d4f8b;
+      color: #fff;
+      font-size: 13px;
+      padding: 8px 0;
+    }
+
+    .container {
+      width: min(1200px, 95vw);
+      max-width: 100%;
+      margin-inline: auto;
+      padding-inline: clamp(12px, 2vw, 24px);
+    }
+
+    .topbar-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .social a {
+      color: #fff;
+      margin-left: 12px;
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .header {
+      background: #fff;
+      padding: 18px 0;
+      
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      color: #1f4d7a;
+      font-size: 22px;
+    }
+
+    .logo i {
+      font-size: 34px;
+      color: #0d4f8b;
+    }
+
+    .contact-boxes {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 13px;
+      color: #444;
+    }
+
+    .contact-item i {
+      color: #0d4f8b;
+      font-size: 18px;
+      margin-top: 3px;
+    }
+
+    .contact-item strong {
+      display: block;
+      color: #1a1a1a;
+      font-size: 12px;
+      margin-bottom: 2px;
+    }
+
+    .navbar {
+      background: #0a4a86;
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      display: flex;
+      gap: 20px;
+      padding: 14px 0;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      transition: color 140ms ease, background-color 140ms ease, transform 140ms ease, opacity 140ms ease;
+      border-radius: 10px;
+      padding: 8px 10px;
+      opacity: 0.95;
+      list-style: none;
+    }
+
+    .nav a:hover {
+      opacity: 1;
+      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .nav a.active {
+      background: rgba(255, 255, 255, 0.18);
+      opacity: 1;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 620px;
+      background: url('./grande.jpeg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      color: rgba(255, 255, 255, 0.904);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      width: min(1200px, 95vw);
+      max-width: 100%;
+      margin-inline: auto;
+      padding-block: clamp(60px, 10vw, 90px);
+    }
+
+    .hero small {
+      display: block;
+      font-size: clamp(14px, 1.2vw, 18px);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 5vw, 72px);
+      line-height: 1.02;
+      font-weight: 900;
+      max-width: min(700px, 100%);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0d4f8b;
+      color: #fff;
+      padding: 12px 22px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 10px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      
+
+    }
+
+    .feature-bar {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature {
+      background: rgba(0,0,0,0.65);
+      color: #fff;
+      padding: 28px 24px;
+      border-right: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-height: 95px;
+    }
+
+    .feature i {
+      font-size: 34px;
+      color: #1976d2;
+    }
+
+    .feature h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .feature a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 12px;
+    }
+
+    .courses {
+      background: #fff;
+      padding: 55px 0 70px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(18px, 2vw, 28px);
+    }
+
+    .card {
+      background: #fff;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 12px 32px rgba(10, 74, 134, 0.05);
+    }
+
+    .card img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      color: #333;
+      line-height: 1.2;
+      margin-bottom: 10px;
+      font-weight: 400;
+    }
+
+    .card p {
+      font-size: 13px;
+      line-height: 1.7;
+      color: #666;
+      margin-bottom: 16px;
+    }
+
+    .card .btn {
+      padding: 10px 18px;
+      font-size: 12px;
+    }
+    .menu-toggle {
+      display: none;
+      position: fixed;
+      top: 18px;
+      right: 20px;
+      z-index: 30;
+      background: #0d4f8b;
+      color: #fff;
+      padding: 10px 14px;
+      border-radius: 4px;
+      cursor: pointer;
+      user-select: none;
+    }
+    footer{
+      background:#0d4f8b;
+      color: rgba(255, 255, 255, 0.86);
+      text-align: center;
+      padding: 26px 20px;
+      margin-top: 40px;
+    }  
+    .page-section {
+      background: #fff;
+      padding: 60px 0;
+    }
+
+    .page-section .wrap {
+      width: min(1200px, 95vw);
+      max-width: 100%;
+      margin-inline: auto;
+      padding-inline: clamp(12px, 2vw, 24px);
+    }
+
+    .section-title {
+      font-size: 40px;
+      margin-bottom: 14px;
+      color: #1a1a1a;
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    .section-subtitle {
+      color: #666;
+      margin-bottom: 26px;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .section-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: clamp(18px, 2vw, 24px);
+    }
+
+    .simple-card {
+      border: 1px solid rgba(13,79,139,0.12);
+      padding: 18px;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .simple-card h3 {
+      margin-bottom: 10px;
+      font-size: 16px;
+      text-transform: uppercase;
+      font-weight: 800;
+      color: #0a4a86;
+    }
+    #btnSports,#btnDortoirs,#btnhouse{
+      padding: 10px 18px;
+      font-size: 12px;
+      background: #0d4f8b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .simple-card p, .simple-card li {
+      font-size: 13px;
+      color: #666;
+      line-height: 1.7;
+    }
+
+    .simple-card ul { padding-left: 18px; }
+
+    .hero-alt {
+      position: relative;
+      min-height: 260px;
+      display: flex;
+      align-items: center;
+      color: #fff;
+      background:linear-gradient(185deg, rgba(16, 35, 63, 0.88), rgba(15, 139, 141, 0.58)), url('./uniluk.jpeg') center/cover no-repeat;
+    }
+
+    .hero-alt::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-alt .hero-content {
+      padding: 0;
+      position: relative;
+    }
+    .btn-btn-primary{
+      padding: 10px 18px;
+      font-size: 12px;
+      background: #0d4f8b;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .hero-alt h1 {
+      font-size: 44px;
+      text-transform: uppercase;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .hero-alt p {
+      color: rgba(255,255,255,0.92);
+      max-width: 820px;
+      line-height: 1.7;
+      font-size: 14px;
+    }
+    .nav .show {
+      display: flex;
+    flex-direction: column;
+    height: auto;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
+  }
+  
+
+    #xbar {
+  display: none;
+}
+
+.menu-toggle.active .fa-bars {
+  display: none;
+}
+
+.menu-toggle.active #xbar {
+  display: inline-block;
+}
+
+  
+   
+
+    /* Desktop: toujours afficher les liens de la navbar */
+    @media (min-width: 901px) {
+      #site-nav #nav {
+        max-height: none ;
+        opacity: 1 ;
+        display: flex;
+        flex-direction: row;
+        padding: 14px 0 ;
+        gap: 28px ;
+        align-items: center;
+      }
+
+      #site-nav #nav li {
+        opacity: 1 ;
+       
+      }
+
+      .menu-toggle {
+        display: none;
+        color: white;
+      }
+    }
+
+
+    @media (max-width: 900px) {
+      .header-content,
+      .topbar-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+      }
+      
+      
+      .topbar {
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        backdrop-filter: blur(5px);
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+      #contact{
+        display: none;
+      }
+      .contact{
+        display:flex;
+        flex-direction: column;
+      }
+      .navbar {
+        position: sticky;
+        top: 54px;
+      }
+
+      #nav {
+        max-height: 0px;
+        opacity: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+        gap: 0;
+      }
+      #wrap{
+        display: block;
+      }
+
+      #site-nav.is-open #nav {
+        max-height: 60vh;
+        opacity: 1;
+        overflow: auto;
+        padding: 12px 0;
+        gap: 8px;
+      }
+
+      #nav li {
+        width: 100%;
+      }
+
+      #nav a {
+        width: 100%;
+        display: block;
+        padding: 12px 16px;
+        border-radius: 10px;
+      }
+
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .feature-bar,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .feature {
+        border-right: none;
+        border-bottom: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .section-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-alt h1 {
+        font-size: 34px;
+      }
+    }
+  
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+      will-change: opacity, transform;
+    }
+
+
+
+  
+    body {
+      overflow-x: hidden;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 12px;
+      top: -60px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: #0d4f8b;
+      color: #fff;
+      z-index: 9999;
+      text-decoration: none;
+      transition: top 160ms ease;
+    }
+
+   
+
+    html{
+      scroll-behavior: smooth;
+    }
+    
+    .back-to-top {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      z-index: 999;
+      background: #0d4f8b;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border: none;
+      box-shadow: 0 10px 30px rgba(13, 79, 139, 0.25);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(10px);
+      transition: opacity 200ms ease, transform 200ms ease;
+    }
+    #facultes ~ .page-section .simple-card{
+  transition: transform .4s ease, box-shadow .4s ease;
+}
+
+#facultes ~ .page-section .simple-card:hover{
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(13,79,139,.15);
+}
+  
+
+.back-to-top.is-visible {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .back-to-top.is-highlight {
+      box-shadow: 0 14px 40px rgba(10, 74, 134, 0.32);
+      background: #0a4a86;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        transition-duration: 0.001ms !important;
+        animation-duration: 0.001ms !important;
+      }
+    }
+  .contact-container{
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:30px;
+    margin-top:30px;
+}
+
+.contact-info,
+.contact-form{
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 8px 25px rgba(0,0,0,.08);
+}
+
+.contact-info h3,
+.contact-form h3{
+    color:#0d4f8b;
+    margin-bottom:25px;
+}
+
+.contact-box{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    margin-bottom:20px;
+}
+
+.contact-box i{
+    width:50px;
+    height:50px;
+    background:#0d4f8b;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:18px;
+}
+
+.contact-box strong{
+    display:block;
+    margin-bottom:5px;
+}
+
+.contact-box p{
+    margin:0;
+    color:#666;
+}
+
+.contact-box a{
+    color:#0d4f8b;
+    text-decoration:none;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    margin-bottom:18px;
+}
+
+.field label{
+    margin-bottom:8px;
+    font-weight:600;
+}
+#xbar{
+  display: none;
+}
+.field input,
+.field textarea{
+    padding:14px;
+    border:1px solid #d8d8d8;
+    border-radius:10px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.field input:focus,
+.field textarea:focus{
+    border-color:#0d4f8b;
+    box-shadow:0 0 15px rgba(13,79,139,.15);
+    outline:none;
+}
+
+.field textarea{
+    min-height:150px;
+    resize:vertical;
+}
+
+.btn-submit,
+.btn-contact-download{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    justify-content:center;
+    text-decoration:none;
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:10px;
+    background:#0d4f8b;
+    color:#fff;
+    font-weight:700;
+    cursor:pointer;
+    transition:.3s;
+}
+.simple-card i{
+    font-size: 28px;
+    color: #0d4f8b;
+    margin-bottom: 12px;
+}
+.btn-submit:hover,
+.btn-contact-download:hover{
+    background:#083764;
+    transform:translateY(-2px);
+}
+
+@media(max-width:900px){
+
+    .contact-container{
+        grid-template-columns:1fr;
+    }
+
+}
+
+  </style>
+</head>
+<body id="top">
+  <div class="topbar">
+    <div class="container topbar-content">
+      <div>Rejoignez-nous pour un meilleur avenir</div>
+      <div class="social" aria-label="Réseaux sociaux">
+        <a href="https://web.facebook.com/universiteAdeventistedeLukanga"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/uniluk1" ><i class="fab fa-twitter"></i></a>
+        <a href="#" ><i class="fab fa-google-plus-g"></i></a>
+        <a href="#" ><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.instagram.com/uniluk1"><i class="fab fa-instagram" ></i></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-content">
+      <div class="logo">
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>Uniluk\Lukanga</span>
+      </div>
+
+      <div class="contact-boxes">
+        <div class="contact-item">
+          <div class="icon"><span class="flaticon-clock"></span></div>
+          <div class="text">
+            <span>Lundi - Vendredi</span>
+            <strong>8:00-17:00</strong>
+          </div>
+          <i class="fa-solid fa-phone"></i>
+          <div>
+            <span>Appelez-Nous au</span>
+            <strong><a href="tel:+243994889570" >+243 994 889 570</a></strong>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <div>
+            <strong>NOTRE EMAIL</strong>
+            UNILUK@gmail.com
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <div>
+            <strong>Localisation</strong>
+            RDC, Nord-Kivu, Lubero, Lukanga
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Ouvrir le menu mobile">
+    <i class="fa-solid fa-bars"></i>
+    <i class="fa-solid fa-x" id="xbar"></i>
+  </button>
+  <nav class="navbar" id="site-nav" aria-label="Navigation principale">
+    <div class="container">
+      <ul class="nav" id="nav">
+
+        <li><a href="#accueil" aria-label="Aller à la section Accueil">Accueil</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#facultes">Facultés</a></li>
+        <li><a href="#administration">Administration</a></li>
+        <li><a href="#campus">Campus</a></li>
+        <li><a href="#admission">Admission</a></li>
+        <li><a href="#institutions">Nos institutions</a></li>
+        <li><a href="#centre">Centre de recherche</a></li>
+        <li><a href="#actualites">Actualités</a></li>
+        <li><a href="#contact">Contactez-nous</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+  <section class="hero" id="accueil">
+    <div class="hero-content">
+      <small>VEUX-TU UNE AIDE?</small>
+      <h1>BIENVENUE SUR NOTRE CAMPUS</h1>
+      <a href="#about" class="btn">Voir plus</a>
+    </div>
+
+    <div class="feature-bar">
+      <div class="feature">
+        <h3>pourquoi nous choisir</h3>
+        <i class="fa-solid fa-briefcase"></i>
+        <a href="#about">en savoir plus</a>
+      </div>
+      <div class="feature">
+        <i class="fa-solid fa-bus"></i>
+        <div>
+          <h3>VOYAGE</h3>
+          <p>Uniluk possède un bus pour les transport commun butembo lukanga ,lukanga butembo</p>
+          <span>
+            Horaire mercredi 7H00 départ - 14H30 retour au bercail Lukanga
+          </span>
+        </div>
+      </div>
+      <div class="feature">
+        <i class="fa-solid fa-user"></i>
+        <div>
+          <h3>Campus</h3>
+          <a href="campus.html">en savoir plus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="courses ">
+    <div class="container">
+      <div class="cards">
+        <div class="card">
+          <img src="./library.png" alt="Bibliothèque et ressources humaines" loading="lazy">
+          <h3>Bibliotheque et resource humaine</h3>
+          <p>La bibliothèque universitaire joue un rôle essentiel dans le parcours académique des étudiants ainsi que dans les activités de recherche...</p>
+          <a href="#about" class="btn">En savoir plus</a>
+        </div>
+
+        <div class="card">
+          <img src="./LABO.jpeg" alt="Laboratoire informatique" loading="lazy">
+          <h3>Laboratoire informatique</h3>
+          <p>Le laboratoire informatique de l’université constitue un espace moderne dédié à l’apprentissage pratique et au développement des compétences numériques...</p>
+          <a href="#facultes" class="btn"> En savoir plus</a>
+        </div>
+
+        <div class="card">
+          <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Télécommunication sur le campus" loading="lazy">
+          <h3>La télécommunication au sein du campus</h3>
+          <p>Grâce au réseau Wi-Fi Starlink, l’université améliore l’accès à Internet pour la recherche scientifique, les cours en ligne et la communication numérique...</p>
+          <a href="#campus" class="btn">En savoir plus</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="hero-alt " id="about">
+    <div class="container hero-content">
+      <h1>À propos</h1>
+      <p>Université Adventiste de Lukanga</p>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <div class="section-title">À propos de l’UNILUK</div>
+      <div class="section-subtitle">Une université chrétienne au service de la communauté.</div>
+
+      <div class="section-grid">
+        <div class="simple-card">
+          <h3>Mission</h3>
+          <p>S'appliquer à developper et à fournir une éducation chrétienne holistique de qualité équilibrée du point de vue physique, intellectuel, moral, social, spirituel et professionnel...</p>
+        </div>
+        <div class="simple-card">
+          <h3>Vision</h3>
+          <p>Former pour l'excellence au service en inculquant un sens d'intégrité, d'initiative, de perséverance, d'adaptabilité et de confiance en Dieu.</p>
+        </div>
+        <div class="simple-card">
+          <h3>Valeurs</h3>
+          <ul>
+            <li>Intégrité et discipline</li>
+            <li>Respect de l’humain</li>
+            <li>Esprit de service</li>
+            <li>Excellence académique</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="margin-top:24px" class="simple-card">
+        <h3>Pourquoi nous choisir</h3>
+        <p>Les avantages de choisir d’étudier avec l’UNILUK :</p>
+        <ul>
+          <li><strong>Des enseignements de qualité</strong></li>
+          <li><strong>Des diplômes reconnus</strong></li>
+          <li><strong>Des enseignants qualifiés</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- FACULTES -->
+  <section class="hero-alt" id="facultes">
+    <div class="container hero-content">
+      <h1>Facultés</h1>
+      <p>Université Adventiste de Lukanga</p>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <div class="section-title">Nos facultés</div>
+      <div class="section-subtitle" style="align-items: center;justify-content: center;">
+        Un parcours académique structuré par domaines de formation.
+         
+          <h3>UNILUK</h3>
+          <p>Domaines organisés (système LMD)</p>
+      </div>
+      <div class="section-grid">
+        <div class="simple-card">
+          <i class="fa-solid fa-book-bible"></i>
+          <h3>Sciences de l'Homme & Société / Théologie</h3>
+          <p>Licences & Masters (théologie biblique, systématique, appliquée, pastorale...)</p>
+        </div>
+        <div class="simple-card">
+          <i class="fa-solid fa-desktop"></i>
+          <h3>Sciences et Technologie</h3>
+          <p>Sciences informatiques, génie civil...</p>
+        </div>
+        <div class="simple-card">
+          <i class="fa-solid fa-stethoscope"></i>
+          <h3>Sciences de la Santé</h3>
+          <p>Santé publique & Science des aliments / Nutrition / diététique.</p>
+        </div>
+        <div class="simple-card">
+          <i class="fa-solid fa-tractor"></i>
+          <h3>Sciences Agronomiques & Environnement</h3>
+          <p>Sciences de la production végétale et environnement.</p>
+        </div>
+        <div class="simple-card">
+          <i class="fa-solid fa-user-police"></i>
+          <h3>Sciences Économique & Gestion</h3>
+          <p>Sciences économiques & management (systèmes d’informations, finance, comptabilité & audit...).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMINISTRATION -->
+  <section class="hero-alt" id="administration">
+    <div class="container hero-content">
+      <h1>Administration</h1>
+      <p>Une administration proche, claire et orientée service</p>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <div class="section-title">Notre rôle</div>
+      <div class="section-subtitle">L’administration coordonne les activités académiques, financières et sociales afin de garantir un environnement d’étude organisé...</div>
+      <div class="section-grid">
+        <div class="simple-card"><h3>Rectorat</h3><p>Orientation institutionnelle, coordination générale et représentation.</p></div>
+        <div class="simple-card"><h3>Secrétariat général académique</h3><p>Inscriptions, dossiers étudiants, attestations et calendrier académique.</p></div>
+        <div class="simple-card"><h3>Finances</h3><p>Gestion des frais académiques, paiements et reçus.</p></div>
+        <div class="simple-card"><h3>Affaires étudiantes</h3><p>Vie au campus, accompagnement et activités communautaires.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAMPUS -->
+  <section class="hero-alt" id="campus">
+    <div class="container hero-content">
+      <h1>Campus</h1>
+      <p>Dortoir & loisir</p>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <div class="section-title">Vie au Campus</div>
+      <div class="section-subtitle">Dévotions, enseignements et activités qui encouragent le caractère.</div>
+      <div class="section-grid">
+        <div class="simple-card">
+          <h3>Dortoirs</h3>
+          <p>3 dortoirs : Dortoir fille Plaza, Dortoir garçon HOMME, Dortoir garçon ATLANTA.</p>
+          <a class="btn" href="./campus.html">Voir les détails</a>
+        </div>
+        <div class="simple-card">
+          <h3>Sport et Loisirs</h3>
+          <p>Football, basketball, volleyball, tennis, footing… Renforcement de l’esprit d’équipe et de la discipline.</p>
+          <a class="btn" href="./campus.html">Voir les détails</a>
+        </div>
+        <div class="simple-card">
+          <h3>Guest House</h3>
+          <p>Un hôtel réservé aux visiteurs et aux assistants qui souhaitent passer la nuit.</p>
+          <a class="btn" href="./campus.html">Voir les détails</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ADMISSION -->
+  <section class="hero-alt" id="admission">
+    <div class="container hero-content">
+      <h1>Admission</h1>
+      <p>Université Adventiste de Lukanga</p>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <div class="section-title">Critères d’admission</div>
+      <div class="section-subtitle">Les dossiers ci-dessous sont exigés pour toute demande d’admission.</div>
+      <div class="section-grid">
+        <div class="simple-card" style="grid-column: span 2;">
+          <ul>
+            <li>Diplôme d’état</li>
+            <li>Bulletins scolaires</li>
+            <li>Photo passeport</li>
+            <li>Acte de naissance</li>
+            <li>Aptitudes physiques</li>
+            <li>Paiement des frais d’inscription</li>
+            <li>Choix de la faculté ou filière</li>
+          </ul>
+        </div>
+        <div class="simple-card">
+          <h3>Préparez votre dossier</h3>
+          <p>Les documents doivent être lisibles et au format numérique (PDF/JPG/PNG).</p>
+        </div>
+      </div>
+
+      <div style="margin-top:24px" class="simple-card">
+        <h3>Formulaire de préinscription </h3>
+        <form id="admissionForm" action="#" >
+          <div class="section-grid" style="grid-template-columns: repeat(2, 1fr);">
+            <label>
+              <strong>Nom</strong>
+              <div style="height:8px"></div>
+              <input name="nom" type="text" placeholder="Votre nom" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #c8d3df;" />
+            </label>
+            <label>
+              <strong>Post-nom</strong>
+              <div style="height:8px"></div>
+              <input name="postnom" type="text" placeholder="Votre post-nom" style="width:100%; padding:10px; border-radius:8px; border:1px solid #c8d3df;" />
+            </label>
+            <label style="grid-column: span 2;">
+              <strong>Prénom(s)</strong>
+              <div style="height:8px"></div>
+              <input name="prenoms" type="text" placeholder="Votre prénom(s)" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #c8d3df;" />
+            </label>
+          </div>
+
+          <div style="margin-top:14px">
+            <label><strong>Date de naissance</strong><div style="height:8px"></div>
+              <input name="dateNaissance" type="date" required style="width:100%; padding:10px; border-radius:8px; border:1px solid #c8d3df;" />
+            </label>
+          </div>
+
+          <div style="margin-top:14px" class="section-grid" >
+            <label><strong>Diplôme d’état</strong><div style="height:8px"></div>
+              <input name="diplomeEtat" type="file" accept="application/pdf,image/*" required style="width:100%;" />
+            </label>
+            <label><strong>Bulletins scolaires</strong><div style="height:8px"></div>
+              <input name="bulletins" type="file" accept="application/pdf,image/*" style="width:100%;" />
+            </label>
+            <label><strong>Photo passeport</strong><div style="height:8px"></div>
+              <input name="photoPasseport" type="file" accept="image/*" required style="width:100%;" />
+            </label>
+            <label><strong>Acte de naissance</strong><div style="height:8px"></div>
+              <input name="acteNaissance" type="file" accept="application/pdf,image/*" required style="width:100%;" />
+            </label>
+          </div>
+
+              <div class="section-grid form-actions" style="margin-top:16px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px;">
+            <button type="submit" class="btn">Envoyer ma demande</button>
+            <button type="reset" class="btn" style="background:#8a8a8a;">Effacer</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSTITUTIONS -->
+  <section class="hero-alt" id="institutions">
+    <div class="container hero-content">
+      <h1>Nos institutions</h1>
+      <p>Apprenez davantage sur nos institutions</p>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <div class="section-title">Nos institutions</div>
+      <div class="section-subtitle">Découvrez les différentes institutions qui composent l'Université Adventiste de Lukanga.</div>
+      <div class="section-grid">
+        <div class="simple-card">
+          <h3>Université Adventiste de LUKANGA (UNILUK)</h3>
+          <p>Programmes de licences et master dans plusieurs facultés.</p>
+          <a class="btn" href="#" style="margin-top:10px; display:inline-block">VISITER</a>
+        </div>
+        <div class="simple-card">
+          <h3>ISTM/L (Institut supérieur des techniques médicales)</h3>
+          <p>Formation santé (licence jusqu'au Master) depuis 2012.</p>
+          <a class="btn" href="https://istmluk.netlify.app/" style="margin-top:10px; display:inline-block">VISITER</a>
+        </div>
+        <div class="simple-card">
+          <h3>ISTA (Institut supérieur des techniques Adventistes)</h3>
+          <p>Filières techniques : formation des techniciens (ville de BENI).</p>
+          <a class="btn" href="" style="margin-top:10px; display:inline-block">VISITER</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENTRE -->
+  <section class="hero-alt" id="centre">
+    <div class="container hero-content">
+      <h1>Centre de recherche</h1>
+      <p>Nos centres des recherches</p>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <div class="section-title">Les centres des recherche</div>
+      <div class="section-subtitle">FRIDI, GACI, GREG, GREP, GACIM…</div>
+      <div class="section-grid">
+        <div class="simple-card"><h3>FRIDI</h3><p>Foyer de recherche pour le développement intégré et la publication de vos livres, journaux et articles.</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
+        <div class="simple-card"><h3>GACI</h3><p>Groupe d’analystes chercheurs en informatique.</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
+        <div class="simple-card"><h3>GREG</h3><p>Groupe de réflexion en économie et gestion.</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
+        <div class="simple-card"><h3>GREP</h3><p>Groupe de recherche en psychologie (activités orientées vers ces domaines).</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
+        <div class="simple-card"><h3>GACIM</h3><p>Groupe d’analystes chercheurs en imagerie médicale.</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACTUALITES -->
+
+  <section class="hero-alt" id="actualites">
+    <div class="container hero-content">
+      <h1>Actualités</h1>
+      <p>Université Adventiste de Lukanga</p>
+    </div>
+  </section>
+  <section class="page-section">
+    <div class="wrap">
+      <div class="section-title">Actualités</div>
+      <div class="section-subtitle">Restez informé des dernières nouvelles et événements de l'UNILUK.</div>
+      <div class="section-grid">
+        <div class="simple-card"><h3>Inauguration du nouveau laboratoire Informatique</h3><p>en mai, l'UNILUK a inauguré son nouveau laboratoire Informatique, équipé des dernières technologies pour la recherche Informatisé"...</p><a class="btn" href="#" style="margin-top:10px;">Lire plus</a></div>
+        <div class="simple-card"><h3>Conférence sur le développement durable</h3><p>Le 30 octobre 2024, l'UNILUK a organisé une conférence sur le développement durable, réunissant des experts locaux et internationaux pour discuter des enjeux environnementaux...</p><a class="btn" href="#" style="margin-top:10px;">Lire plus</a></div>
+        <div class="simple-card"><h3>Finissage du bâtiment ISTM</h3><p>En 2026, l'UNILUK a achevé le finissage du bâtiment ISTM.</p><a class="btn" href="#" style="margin-top:10px;">Lire plus</a></div>
+      </div>
+    </div>
+  </section>
+  <!--FAQ-->
+  <section class="faq-section" id="faq">
+    <div class="wrap">
+      <div class="section-title faq-title">Questions fréquentes</div>
+      <div class="section-subtitle">Informations clés sur l’UNILUK (Université Adventiste de Lukanga).</div>
+
+      <div class="faq" aria-label="Foire aux questions UNILUK">
+        <details class="faq-item">
+          <summary class="faq-question">Quels sont les critères d’admission à l’UNILUK ?</summary>
+          <div class="faq-answer">
+            Les demandes doivent inclure : diplôme d’état, bulletins scolaires, photo passeport, acte de naissance, aptitudes physiques, paiement des frais d’inscription et choix de la faculté (filière).
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Quels documents sont exigés pour la préinscription ?</summary>
+          <div class="faq-answer">
+            Le formulaire de préinscription demande notamment : votre identité (nom, prénoms, date de naissance), et des pièces justificatives en format numérique (PDF/JPG/PNG selon les champs du formulaire).
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Y a-t-il plusieurs facultés à l’UNILUK ?</summary>
+          <div class="faq-answer">
+            Oui. L’UNILUK propose plusieurs domaines de formation organisés selon le système LMD :
+            Sciences de l’Homme & Société / Théologie, Sciences et Technologie, Sciences de la Santé, Sciences Agronomiques & Environnement, Sciences Économique & Gestion.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">L’UNILUK propose-t-elle des logements (dortoirs) ?</summary>
+          <div class="faq-answer">
+            Oui. Le campus dispose de trois dortoirs : Dortoir fille Plaza, Dortoir garçon Homme et Dortoir garçon Atlanta.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Quels sports et loisirs sont proposés sur le campus ?</summary>
+          <div class="faq-answer">
+            L’université encourage les activités sportives comme le football, basketball, volleyball, tennis, footing… pour renforcer la discipline et l’esprit d’équipe.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Quelles sont les activités de recherche et les centres existants ?</summary>
+          <div class="faq-answer">
+            L’UNILUK dispose de centres de recherche tels que FRIDI, GACI, GREG, GREP et GACIM, orientés vers le développement et la publication des travaux ainsi que des activités de recherche dans différents domaines.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary class="faq-question">Comment contacter l’UNILUK ?</summary>
+          <div class="faq-answer">
+            Vous pouvez contacter l’université par téléphone ou e-mail. Les informations se trouvent dans la section “Contactez-nous” (adresse, téléphone, e-mail, horaires).
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <div class="contact-container" id="contact">
+  <!-- Informations -->
+  <div class="contact-info" >
+    <h3><i class="fa-solid fa-address-card"></i> Nos coordonnées</h3>
+
+    <div class="contact-box">
+      <i class="fa-solid fa-location-dot"></i>
+      <div>
+        <strong>Adresse</strong>
+        <p>RDC, Nord-Kivu, Lubero, Lukanga</p>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <i class="fa-solid fa-phone"></i>
+      <div>
+        <strong>Téléphone</strong>
+        <p><a href="tel:+243994889570">+243 994 889 570</a></p>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <i class="fa-solid fa-envelope"></i>
+      <div>
+        <strong>Email</strong>
+        <p><a href="mailto:contact@uniluk.org">contact@uniluk.org</a></p>
+      </div>
+    </div>
+
+    <div class="contact-box">
+      <i class="fa-solid fa-clock"></i>
+      <div>
+        <strong>Horaires</strong>
+        <p>Lundi - Vendredi : 08h00 - 17h00</p>
+      </div>
+    </div>
+
+    <a href="#" class="btn-contact-download">
+      <i class="fa-solid fa-download"></i>
+      Télécharger le dossier
+    </a>
+  </div>
+
+  <!-- Formulaire -->
+  <form class="contact-form">
+
+    <h3><i class="fa-solid fa-paper-plane"></i> Envoyer un message</h3>
+
+    <div class="field">
+      <label>Nom complet</label>
+      <input type="text" placeholder="Votre nom complet" required>
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" placeholder="vous@exemple.com" required>
+    </div>
+
+    <div class="field">
+      <label>Sujet</label>
+      <input type="text" placeholder="Admission, information..." required>
+    </div>
+
+    <div class="field">
+      <label>Message</label>
+      <textarea placeholder="Votre message..." required></textarea>
+    </div>
+
+    <button type="submit" class="btn-submit">
+      <i class="fa-solid fa-paper-plane"></i>
+      Envoyer
+    </button>
+
+  </form>
+
+</div>
+  <script src="./script-inline.js" defer></script>
+
+
+  
+  <a class="back-to-top" href="#top" aria-label="Retour en haut" id="back-to-top">↑</a>
+
+  </main>
+
+  <footer style="text-align:center; padding:18px 12px; background:#0a4f86; color:white; font-size:13px;" >
+    <div class="lienrapide">
+    <a href="#accueil" style="color:inherit;text-decoration:underline">Accueil</a> |
+      <a href="#about" style="color:inherit;text-decoration:underline">À propos</a> |
+      <a href="#facultes" style="color:inherit;text-decoration:underline">Facultés</a> |
+      <a href="#administration" style="color:inherit;text-decoration:underline">Administration</a> |
+      <a href="#campus" style="color:inherit;text-decoration:underline">Campus</a> |
+      <a href="#admission" style="color:inherit;text-decoration:underline">Admission</a> |
+      <a href="#institutions" style="color:inherit;text-decoration:underline">Nos institutions</a> |
+      <a href="#centre" style="color:inherit;text-decoration:underline">Centre de recherche</a> |
+      <a href="#actualites" style="color:inherit;text-decoration:underline">Actualités</a> |
+      <a href="#contact" style="color:inherit;text-decoration:underline">Contactez-nous</a>
+    </div>
+    <div class="footer">
+      <p>&copy; 2026 Université Adventiste de Lukanga. Tous droits réservés. Développé par <a href="https://wa.me/243812135098" style="color:inherit;text-decoration:underline">MHL-DEV</a>.</p>
+    </div>
+    
+  </footer>
+</body>
+</html>
+
