@@ -220,8 +220,8 @@
       border-radius: 10px;
       border: none;
       cursor: pointer;
-      
-
+      display: inline-block;
+      margin-top: 15px;
     }
     .hero .btn_p{
       background: #0d4f8b;
@@ -258,7 +258,7 @@
 
 .hero-content {
       padding-block: clamp(70px, 11vw, 105px);
-     
+        
       margin-top: 0;
     }
 .hero .btn_p {
@@ -323,25 +323,56 @@
       display: block;
       margin-bottom: 12px;
     }
-    .faq-section{
-      background: #fff;
-      padding: 55px 0 70px;
-    }
-    .faq-item{
-      border: 1px solid #ddd;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      overflow: hidden;
-    }
-    .faq-quesstion{
-      padding: 18px;
-      cursor: pointer;
-      font-weight: 700;
-    }
-    .faq-answet{
-      padding: 18px;
-      border-top: 1px solid #eee;
-    }
+   /* FAQ (UNILUK)  */
+.faq-section {
+    background: #fff;
+    padding: 60px 0;
+}
+
+.faq-title {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #1a1a1a;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.faq {
+    margin-top: 18px;
+    display: grid;
+    gap: 14px;
+}
+
+.faq-item {
+    border: 1px solid rgba(13,79,139,0.14);
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+}
+
+.faq-question {
+    cursor: pointer;
+    padding: 16px 18px;
+    font-weight: 900;
+    color: #0d4f8b;
+    list-style: none;
+    outline: none;
+}
+
+.faq-question::-webkit-details-marker {
+    display: none;
+}
+
+.faq-answer {
+    padding: 0 18px 16px;
+    color: #666;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.faq-item[open] {
+    box-shadow: 0 12px 32px rgba(10, 74, 134, 0.08);
+}
     .card h3 {
       font-size: 18px;
       color: #333;
@@ -542,7 +573,14 @@
         align-items: flex-start;
         gap: 12px;
       }
+      
+      .faq-section {
+        padding: 40px 0;
+      }
 
+      .faq-title {
+        font-size: 28px;
+      }
       .hero {
         min-height: 0;
         overflow: hidden;
@@ -551,7 +589,7 @@
         padding-bottom: 0;
       }
 
-.hero-content {
+      .hero-content {
         padding-block: 42px 28px;
         display: flex;
         flex-direction: column;
@@ -1035,7 +1073,7 @@
           <img src="./library.png" alt="Bibliothèque et ressources humaines" loading="lazy">
           <h3>Bibliotheque et resource humaine</h3>
           <p>La bibliothèque universitaire joue un rôle essentiel dans le parcours académique des étudiants ainsi que dans les activités de recherche...</p>
-          <a href="#about" class="btn">En savoir plus</a>
+          <a href="https://peaceful-crostata-a5561c.netlify.app/" class="btn">En savoir plus</a>
         </div>
 
         <div class="card">
@@ -1319,11 +1357,11 @@
       <div class="section-title">Les centres des recherche</div>
       <div class="section-subtitle">FRIDI, GACI, GREG, GREP, GACIM…</div>
       <div class="section-grid">
-        <div class="simple-card"><h3>FRIDI</h3><p>Foyer de recherche pour le développement intégré et la publication de vos livres, journaux et articles.</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
-        <div class="simple-card"><h3>GACI</h3><p>Groupe d’analystes chercheurs en informatique.</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
-        <div class="simple-card"><h3>GREG</h3><p>Groupe de réflexion en économie et gestion.</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
-        <div class="simple-card"><h3>GREP</h3><p>Groupe de recherche en psychologie (activités orientées vers ces domaines).</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
-        <div class="simple-card"><h3>GACIM</h3><p>Groupe d’analystes chercheurs en imagerie médicale.</p><a class="btn" href="#" style="margin-top:10px;">VISITER</a></div>
+        <div class="simple-card"><h3>FRIDI</h3><p>Foyer de recherche pour le développement intégré et la publication de vos livres, journaux et articles.</p><a class="btn" href="#">VISITER</a></div>
+        <div class="simple-card"><h3>GACI</h3><p>Groupe d’analystes chercheurs en informatique.</p><a class="btn" href="#">VISITER</a></div>
+        <div class="simple-card"><h3>GREG</h3><p>Groupe de réflexion en économie et gestion.</p><a class="btn" href="#">VISITER</a></div>
+        <div class="simple-card"><h3>GREP</h3><p>Groupe de recherche en psychologie (activités orientées vers ces domaines).</p><a class="btn" href="#">VISITER</a></div>
+        <div class="simple-card"><h3>GACIM</h3><p>Groupe d’analystes chercheurs en imagerie médicale.</p><a class="btn" href="#">VISITER</a></div>
       </div>
     </div>
   </section>

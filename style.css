@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'poppins';
     background: #f5f5f5;
     color: #10233f;
     line-height: 1.6;
@@ -97,7 +97,7 @@ main {
     box-shadow: 0 14px 38px rgba(0, 0, 0, 0.08);
 }
 
-/* ===== CARD SPLIT (Dortoirs / Sports) ===== */
+/*  CARD SPLIT (Dortoirs / Sports)  */
 .card-split {
     display: grid;
     grid-template-columns: 1fr 1.3fr;
@@ -285,66 +285,9 @@ footer {
     font-size: 0.95rem;
 }
 
-/* ===== FAQ (UNILUK) ===== */
-.faq-section {
-    background: #fff;
-    padding: 60px 0;
-}
 
-.faq-title {
-    font-size: 40px;
-    margin-bottom: 10px;
-    color: #1a1a1a;
-    font-weight: 900;
-    text-transform: uppercase;
-}
 
-.faq {
-    margin-top: 18px;
-    display: grid;
-    gap: 14px;
-}
 
-.faq-item {
-    border: 1px solid rgba(13,79,139,0.14);
-    border-radius: 12px;
-    background: #fff;
-    overflow: hidden;
-}
-
-.faq-question {
-    cursor: pointer;
-    padding: 16px 18px;
-    font-weight: 900;
-    color: #0d4f8b;
-    list-style: none;
-    outline: none;
-}
-
-.faq-question::-webkit-details-marker {
-    display: none;
-}
-
-.faq-answer {
-    padding: 0 18px 16px;
-    color: #666;
-    line-height: 1.8;
-    font-size: 14px;
-}
-
-.faq-item[open] {
-    box-shadow: 0 12px 32px rgba(10, 74, 134, 0.08);
-}
-
-@media (max-width: 900px) {
-    .faq-section {
-        padding: 40px 0;
-    }
-
-    .faq-title {
-        font-size: 28px;
-    }
-}
 
 
 @media (max-width: 840px) {
